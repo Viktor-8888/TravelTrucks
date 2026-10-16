@@ -1,0 +1,67 @@
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 696px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  color: #f7f7f7;
+  background-image: url("/travel.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+.heroContainer {
+  padding-top: 195px;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  min-width: 571px;
+}
+
+.heroContent h1 {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 67%;
+  color: #f7f7f7;
+  margin-bottom: 16px;
+}
+
+.heroContent p {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: #f7f7f7;
+  margin-bottom: 40px;
+}
+
+.heroButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 173px;
+  min-height: 56px;
+  padding: 16px 40px;
+  border-radius: 200px;
+  background-color: var(--color-button);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: background-color 200ms ease;
+}
+
+.heroButton:hover {
+  background-color: var(--color-button-hover);
+}
