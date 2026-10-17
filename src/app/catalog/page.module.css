@@ -1,0 +1,236 @@
+.catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.catalogLayout {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+  flex: 0 1 360px;
+  min-height: 840px;
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--color-input);
+}
+
+.results {
+  flex: 1 1 888px;
+  min-width: 0;
+}
+
+.campersList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.campersPage {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.locationField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.locationLabel {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #101828;
+}
+
+.locationInputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 18px 20px;
+  width: 312px;
+  height: 56px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.locationInput {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #101828;
+}
+
+.locationInput::placeholder {
+  color: #101828;
+  opacity: 1;
+}
+
+.locationIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: #101828;
+}
+
+.loadMoreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  border: 1px solid #dadde1;
+  border-radius: 50px;
+  padding: 16px 32px;
+  min-width: 145px;
+  height: 56px;
+  margin: 40px auto 0;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: #101828;
+  cursor: pointer;
+  transition: border-color 250ms ease;
+  white-space: nowrap;
+}
+
+.loadMoreButton:hover {
+  border-color: #6d7b75;
+}
+
+.loadMoreButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.filterTitle {
+  margin: 0 0 24px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.filterFieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.filterLegend {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.filterFieldset label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.filterFieldset input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border: 1px solid #475467;
+  border-radius: 50%;
+  background-color: #f7f7f7;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.filterFieldset input[type="radio"]::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #475467;
+  transform: scale(0);
+  transition: transform 150ms ease;
+}
+
+.filterFieldset input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.filterFieldset input[type="radio"]:checked {
+  border-color: #475467;
+}
+
+.filterActions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.searchButton,
+.clearFiltersButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 312px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease;
+}
+
+.searchButton {
+  gap: 10px;
+  border: none;
+  background: #829b91;
+  color: #fff;
+}
+
+.searchButton:hover {
+  background: #687f75;
+}
+
+.clearFiltersButton {
+  gap: 4px;
+  border: 1px solid #dadde1;
+  background: #fff;
+}
+
+.clearFiltersButton:hover {
+  background: #f7f9f8;
+  border-color: #829b91;
+}

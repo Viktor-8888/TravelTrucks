@@ -10,7 +10,13 @@ export default function Header() {
     <header className={css.header}>
       <div className={css.container}>
         <Link href="/" className={css.logo} aria-label="TravelTrucks — Home">
-          <Image src="/logo.svg" alt="TravelTrucks" width={136} height={16} />
+          <Image
+            src="/logo.svg"
+            alt="TravelTrucks"
+            width={136}
+            height={16}
+            loading="eager"
+          />
         </Link>
 
         <nav className={css.navigation}>
