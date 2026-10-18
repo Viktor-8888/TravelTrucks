@@ -107,7 +107,7 @@ export default function CatalogClient() {
 
   return (
     <main className={`container ${css.catalog}`}>
-      <h1>Catalog</h1>
+      <h1 className={css.visuallyHidden}>Catalog</h1>
 
       <div className={css.catalogLayout}>
         <aside className={css.filters}>

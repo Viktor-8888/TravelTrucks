@@ -47,8 +47,10 @@ export default function CamperCard({ camper }: CamperCardProps) {
       </div>
 
       <div className={css.content}>
-        <h2 className={css.title}>{camper.name}</h2>
-        <div className={css.price}>€{camper.price.toFixed(2)}</div>
+        <div className={css.wrapper}>
+          <h2 className={css.title}>{camper.name}</h2>
+          <div className={css.price}>€{camper.price.toFixed(2)}</div>
+        </div>
 
         <div className={css.meta}>
           <span className={css.metaItem}>

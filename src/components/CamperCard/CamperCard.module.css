@@ -33,8 +33,8 @@
   align-items: flex-start;
   gap: 24px;
   width: 100%;
-  min-width: 0;
-  height: 312px;
+  max-width: 888px;
+  min-height: 312px;
   padding: 24px;
   border: 1px solid var(--color-border);
   border-radius: 16px;
@@ -46,7 +46,7 @@
   width: 219px;
   height: 240px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 16px;
 }
 
 .image {
@@ -58,12 +58,20 @@
 
 .content {
   display: flex;
-  flex: 1;
   flex-direction: column;
+  width: 100%;
+  max-width: 524px;
+  min-height: 264px;
   min-width: 0;
-  height: 264px;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
 .title {
   font-size: 24px;
   font-weight: 600;
@@ -71,17 +79,19 @@
 }
 
 .price {
-  margin-top: 8px;
   font-size: 24px;
   font-weight: 600;
+  line-height: 1.33;
 }
 
 .meta {
   display: flex;
   align-items: center;
+  flex-direction: row;
   gap: 16px;
-  margin-top: 8px;
   font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 24px;
 }
 
 .metaItem {
@@ -95,39 +105,45 @@
 }
 
 .description {
-  margin-top: 24px;
   color: var(--color-text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 24px;
+  width: 100%;
 }
 
 .features {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .feature {
   display: inline-flex;
+  flex-direction: row;
   align-items: center;
   gap: 8px;
   padding: 12px 18px;
-  border-radius: 100px;
-  background-color: var(--color-input);
+  border-radius: 50px;
+  background-color: #f2f4f7;
+  mix-blend-mode: multiply;
   font-size: 16px;
+  height: 48px;
 }
 
 .button {
   align-self: flex-start;
-  margin-top: auto;
   padding: 16px 40px;
   border: none;
-  border-radius: 200px;
+  border-radius: 50px;
   background-color: var(--color-button);
   color: var(--color-white);
   font-weight: 500;
+  height: 56px;
 }
 
 .button:hover {
