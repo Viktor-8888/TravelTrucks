@@ -1,5 +1,6 @@
 import { api } from "./api";
 import type {
+  Camper,
   CampersResponse,
   CamperFilters,
   CamperForm,
@@ -32,6 +33,12 @@ export async function getCampers(
 
 export async function getCamperFilters(): Promise<CamperFilters> {
   const { data } = await api.get<CamperFilters>("/campers/filters");
+
+  return data;
+}
+
+export async function getCamperById(camperId: string): Promise<Camper> {
+  const { data } = await api.get(`/campers/${camperId}`);
 
   return data;
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   FaStar,
   FaMapMarkerAlt,
@@ -81,9 +82,14 @@ export default function CamperCard({ camper }: CamperCardProps) {
           </span>
         </div>
 
-        <button className={css.button} type="button">
+        <Link
+          className={css.button}
+          href={`/catalog/${camper.id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Show more
-        </button>
+        </Link>
       </div>
     </article>
   );

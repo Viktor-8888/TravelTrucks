@@ -16,6 +16,14 @@ export type CamperAmenity =
   | "gas"
   | "water";
 
+export interface CamperImage {
+  id: string;
+  camperId: string;
+  thumb: string;
+  original: string;
+  order: number;
+}
+
 export interface Camper {
   id: string;
   name: string;
@@ -33,6 +41,7 @@ export interface Camper {
   engine: CamperEngine;
   amenities: CamperAmenity[];
   coverImage: string;
+  gallery?: CamperImage[];
   totalReviews: number;
 }
 
