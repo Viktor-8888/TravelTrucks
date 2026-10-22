@@ -69,16 +69,18 @@ export default function CamperCard({ camper }: CamperCardProps) {
 
         <div className={css.features}>
           <span className={css.feature}>
-            <FaGasPump aria-hidden="true" /> {engineLabels[camper.engine]}
+            <FaGasPump className={css.iconsCard} aria-hidden="true" />{" "}
+            {engineLabels[camper.engine]}
           </span>
 
           <span className={css.feature}>
-            <FaCogs aria-hidden="true" />{" "}
+            <FaCogs className={css.iconsCard} aria-hidden="true" />{" "}
             {transmissionLabels[camper.transmission]}
           </span>
 
           <span className={css.feature}>
-            <FaBus aria-hidden="true" /> {formLabels[camper.form]}
+            <FaBus className={css.iconsCard} aria-hidden="true" />{" "}
+            {formLabels[camper.form]}
           </span>
         </div>
 

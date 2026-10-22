@@ -72,6 +72,13 @@
 
 .ratingIcon {
   color: var(--color-rating);
+  width: 16px;
+  height: 16px;
+}
+
+.iconsCard {
+  width: 20px;
+  height: 20px;
 }
 
 .description {

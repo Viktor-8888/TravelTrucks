@@ -12,9 +12,14 @@ import type {
   CamperTransmission,
 } from "@/types/camper";
 import { IoClose } from "react-icons/io5";
+import LoadingTracks from "@/components/LoadingTracks/LoadingTracks";
+import { SpinnerCircularFixed } from "spinners-react";
 
 export default function CatalogClient() {
   const [location, setLocation] = useState("");
+  const [activeFilterAction, setActiveFilterAction] = useState<
+    "search" | "clear" | null
+  >(null);
   const [isLocationFocused, setIsLocationFocused] = useState(false);
   const [form, setForm] = useState<CamperForm | "">("");
   const [engine, setEngine] = useState<CamperEngine | "">("");
@@ -32,6 +37,7 @@ export default function CatalogClient() {
   const {
     data,
     isLoading,
+    isFetching,
     isError,
     fetchNextPage,
     hasNextPage,
@@ -91,9 +97,9 @@ export default function CatalogClient() {
 
   if (isLoading && !data) {
     return (
-      <main>
-        <p>Loading campers...</p>
-      </main>
+      <div className={css.initialLoadingContainer}>
+        <LoadingTracks />
+      </div>
     );
   }
 
@@ -188,22 +194,36 @@ export default function CatalogClient() {
             <button
               className={css.searchButton}
               type="button"
-              onClick={() =>
+              onClick={() => {
+                setActiveFilterAction("search");
                 setAppliedFilters({
                   location,
                   form,
                   engine,
                   transmission,
-                })
-              }
+                });
+              }}
             >
-              Search
+              {isFetching &&
+              activeFilterAction === "search" &&
+              !isFetchingNextPage ? (
+                <SpinnerCircularFixed
+                  size={24}
+                  thickness={100}
+                  speed={100}
+                  color="#ffffff"
+                  secondaryColor="rgba(255, 255, 255, 0.3)"
+                />
+              ) : (
+                "Search"
+              )}
             </button>
 
             <button
               className={css.clearFiltersButton}
               type="button"
               onClick={() => {
+                setActiveFilterAction("clear");
                 setLocation("");
                 setForm("");
                 setEngine("");
@@ -216,30 +236,46 @@ export default function CatalogClient() {
                 });
               }}
             >
-              <IoClose size={24} aria-hidden="true" />
-              Clear filters
+              {isFetching &&
+              activeFilterAction === "clear" &&
+              !isFetchingNextPage ? (
+                <SpinnerCircularFixed
+                  size={24}
+                  thickness={100}
+                  speed={100}
+                  color="#101828"
+                  secondaryColor="rgba(16, 24, 40, 0.2)"
+                />
+              ) : (
+                <>
+                  <IoClose size={24} aria-hidden="true" />
+                  Clear filters
+                </>
+              )}
             </button>
           </div>
         </aside>
-
         <section className={css.results}>
-          <div className={css.campersList}>
-            {data?.pages.map((page, pageIndex) => (
-              <div
-                key={page.page}
-                className={css.campersPage}
-                ref={
-                  pageIndex === data.pages.length - 1 && pageIndex > 0
-                    ? campersListRef
-                    : null
-                }
-              >
-                {page.campers.map((camper) => (
-                  <CamperCard key={camper.id} camper={camper} />
-                ))}
-              </div>
-            ))}
+          <div className={css.resultsContent}>
+            <div className={css.campersList}>
+              {data?.pages.map((page, pageIndex) => (
+                <div
+                  key={page.page}
+                  className={css.campersPage}
+                  ref={
+                    pageIndex === data.pages.length - 1 && pageIndex > 0
+                      ? campersListRef
+                      : null
+                  }
+                >
+                  {page.campers.map((camper) => (
+                    <CamperCard key={camper.id} camper={camper} />
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
+
           {hasNextPage && (
             <button
               className={css.loadMoreButton}
@@ -247,7 +283,20 @@ export default function CatalogClient() {
               onClick={() => fetchNextPage()}
               disabled={isFetchingNextPage}
             >
-              {isFetchingNextPage ? "Loading..." : "Load More"}
+              {isFetchingNextPage ? (
+                <>
+                  <SpinnerCircularFixed
+                    size={24}
+                    thickness={100}
+                    speed={100}
+                    color="#101828"
+                    secondaryColor="rgba(16, 24, 40, 0.2)"
+                  />
+                  Loading...
+                </>
+              ) : (
+                "Load More"
+              )}
             </button>
           )}
         </section>

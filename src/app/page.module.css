@@ -1,9 +1,8 @@
 .hero {
   position: relative;
   display: flex;
-  min-height: 696px;
   width: 100%;
-  max-width: 1440px;
+  height: calc(100vh - 75px);
   margin: 0 auto;
   color: #f7f7f7;
   background-image: url("/travel.webp");
