@@ -6,6 +6,7 @@ import type {
   CamperForm,
   CamperTransmission,
   CamperEngine,
+  CamperReview,
 } from "@/types/camper";
 
 export interface CamperSearchParams {
@@ -39,6 +40,16 @@ export async function getCamperFilters(): Promise<CamperFilters> {
 
 export async function getCamperById(camperId: string): Promise<Camper> {
   const { data } = await api.get(`/campers/${camperId}`);
+
+  return data;
+}
+
+export async function getCamperReviews(
+  camperId: string,
+): Promise<CamperReview[]> {
+  const { data } = await api.get<CamperReview[]>(
+    `/campers/${camperId}/reviews`,
+  );
 
   return data;
 }

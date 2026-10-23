@@ -58,3 +58,12 @@ export interface CamperFilters {
   transmissions: CamperTransmission[];
   engines: CamperEngine[];
 }
+
+export interface CamperReview {
+  id: string;
+  camperId: string;
+  reviewer_name: string;
+  reviewer_rating: number;
+  comment: string;
+  createdAt: string;
+}

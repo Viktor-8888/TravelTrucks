@@ -5,6 +5,7 @@ import CamperInfo from "@/components/CamperInfo/CamperInfo";
 import VehicleDetails from "@/components/VehicleDetails/VehicleDetails";
 import css from "./page.module.css";
 import type { Metadata } from "next";
+import Reviews from "@/components/Reviews/Reviews";
 
 const getCachedCamperById = cache(getCamperById);
 
@@ -61,8 +62,7 @@ export default async function CamperPage({ params }: CamperPageProps) {
         <div className={css.bottomSection}>
           <section>
             <h2 className={css.sectionTitle}>Reviews</h2>
-
-            {/* Тут додамо список відгуків */}
+            <Reviews camperId={camperId} />
           </section>
 
           <section>
