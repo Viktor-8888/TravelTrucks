@@ -111,6 +111,8 @@ export default function CatalogClient() {
     );
   }
 
+  const isAnyFilterSelected = Boolean(form || engine || transmission);
+
   return (
     <main className={`container ${css.catalog}`}>
       <h1 className={css.visuallyHidden}>Catalog</h1>
@@ -122,7 +124,11 @@ export default function CatalogClient() {
               Location
             </label>
 
-            <div className={css.locationInputWrapper}>
+            <div
+              className={`${css.locationInputWrapper} ${
+                isAnyFilterSelected ? css.locationInputWrapperActive : ""
+              }`}
+            >
               <FaMapMarkerAlt className={css.locationIcon} aria-hidden="true" />
               <input
                 className={css.locationInput}
@@ -208,7 +214,7 @@ export default function CatalogClient() {
               activeFilterAction === "search" &&
               !isFetchingNextPage ? (
                 <SpinnerCircularFixed
-                  size={24}
+                  size={32}
                   thickness={100}
                   speed={100}
                   color="#ffffff"
@@ -240,7 +246,7 @@ export default function CatalogClient() {
               activeFilterAction === "clear" &&
               !isFetchingNextPage ? (
                 <SpinnerCircularFixed
-                  size={24}
+                  size={32}
                   thickness={100}
                   speed={100}
                   color="#101828"

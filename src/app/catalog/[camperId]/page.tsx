@@ -6,6 +6,7 @@ import VehicleDetails from "@/components/VehicleDetails/VehicleDetails";
 import css from "./page.module.css";
 import type { Metadata } from "next";
 import Reviews from "@/components/Reviews/Reviews";
+import BookingForm from "@/components/BookingForm/BookingForm";
 
 const getCachedCamperById = cache(getCamperById);
 
@@ -68,7 +69,7 @@ export default async function CamperPage({ params }: CamperPageProps) {
           <section>
             <h2 className={css.sectionTitle}>Book your campervan now</h2>
 
-            {/* Тут додамо форму бронювання */}
+            <BookingForm camperId={camperId} />
           </section>
         </div>
       </div>

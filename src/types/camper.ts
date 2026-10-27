@@ -67,3 +67,12 @@ export interface CamperReview {
   comment: string;
   createdAt: string;
 }
+
+export interface CamperBookingRequest {
+  name: string;
+  email: string;
+}
+
+export interface CamperBookingResponse {
+  message: string;
+}

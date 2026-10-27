@@ -4,7 +4,6 @@
   flex-direction: column;
   gap: 88px;
   width: 1312px;
-  height: 1208px;
 }
 
 .topSection {
@@ -32,7 +31,6 @@
   flex-direction: row;
   gap: 48px;
   width: 1312px;
-  height: 384px;
 }
 
 .sectionTitle {

@@ -7,6 +7,8 @@ import type {
   CamperTransmission,
   CamperEngine,
   CamperReview,
+  CamperBookingRequest,
+  CamperBookingResponse,
 } from "@/types/camper";
 
 export interface CamperSearchParams {
@@ -49,6 +51,18 @@ export async function getCamperReviews(
 ): Promise<CamperReview[]> {
   const { data } = await api.get<CamperReview[]>(
     `/campers/${camperId}/reviews`,
+  );
+
+  return data;
+}
+
+export async function createBookingRequest(
+  camperId: string,
+  booking: CamperBookingRequest,
+): Promise<CamperBookingResponse> {
+  const { data } = await api.post<CamperBookingResponse>(
+    `/campers/${camperId}/booking-requests`,
+    booking,
   );
 
   return data;

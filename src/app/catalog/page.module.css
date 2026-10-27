@@ -61,7 +61,11 @@
   width: 312px;
   height: 56px;
   box-sizing: border-box;
-  background: #fff;
+  background-color: #fff;
+}
+
+.locationInputWrapper:focus-within .locationIcon {
+  color: var(--color-main);
 }
 
 .locationInput {
@@ -73,20 +77,28 @@
   background: transparent;
   font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
-  color: #101828;
+  line-height: 1.5;
+  color: var(--color-main);
 }
 
 .locationInput::placeholder {
-  color: #101828;
+  color: #6c717b;
   opacity: 1;
+}
+
+.locationInputWrapperActive .locationIcon {
+  color: var(--color-main);
+}
+
+.locationInputWrapperActive .locationInput::placeholder {
+  color: var(--color-main);
 }
 
 .locationIcon {
   flex-shrink: 0;
   width: 20px;
   height: 20px;
-  color: #101828;
+  color: #6c717b;
 }
 
 .filterGroup {
@@ -267,25 +279,3 @@
   background-color: var(--color-input); /* За потреби білий фон */
   z-index: 999;
 }
-
-/* Обгортка для результатів, щоб лоудер позиціонувався відносно неї
-.campersListWrapper {
-  position: relative;
-  min-height: 200px;
-} */
-
-/* Напівпрозорий шар, що накладається поверх контенту під час Load More */
-/* .overlayLoader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
-  background-color: rgba(255, 255, 255, 0.7); 
-  backdrop-filter: blur(2px); 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-} */
