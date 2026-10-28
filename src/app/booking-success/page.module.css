@@ -1,0 +1,265 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  width: 1120px;
+  height: 192px;
+}
+
+.successIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #edf2ef;
+  color: #6d7b75;
+  font-size: 32px;
+}
+
+.title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 48px;
+  width: 1120px;
+}
+
+.camperCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0;
+  flex-shrink: 0;
+  border-radius: 16px;
+  width: 440px;
+  height: 528px;
+  background: #f7f7f7;
+}
+
+.camperImage {
+  display: block;
+  width: 440px;
+  height: 264px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.ratingIcon {
+  width: 16px;
+  height: 16px;
+  color: #ffc531;
+}
+
+.locationIcon {
+  width: 16px;
+  height: 16px;
+}
+.nextSteps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
+  padding: 8px 0 0;
+  width: 632px;
+  height: 528px;
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.badges li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  padding: 12px 18px;
+  background-color: #f0f0f0;
+  color: #101828;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 632px;
+  height: 240px;
+}
+
+.steps h2 {
+  margin: 0;
+  color: #101828;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 632px;
+  height: 80px;
+}
+
+.stepIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.stepIconSvg {
+  width: 24px;
+  height: 24px;
+  color: #6d7b75;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.stepContent h3 {
+  margin: 0;
+  color: #101828;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.stepContent p {
+  margin: 0;
+  color: #475467;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 632px;
+  height: 88px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #f7f7f7;
+}
+
+.noticeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.noticeIconSvg {
+  width: 20px;
+  height: 20px;
+  color: #6d7b75;
+}
+
+.notice p {
+  margin: 0;
+  color: #475467;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.divider {
+  width: 632px;
+  height: 0;
+  border-top: 1px solid #dadde1;
+  flex-shrink: 0;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 632px;
+  height: 96px;
+}
+
+.bottom p {
+  margin: 0;
+  color: #475467;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.backToCatalog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  padding: 16px;
+  border-radius: 200px;
+  background-color: #829b91;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: background-color 250ms ease;
+}
+
+.backToCatalog:hover {
+  background-color: #6d7b75;
+}

@@ -8,30 +8,16 @@ import {
   FaBus,
 } from "react-icons/fa";
 import type { Camper } from "@/types/camper";
+import {
+  engineLabels,
+  transmissionLabels,
+  formLabels,
+} from "@/lib/camper-labels";
 import css from "./CamperCard.module.css";
 
 interface CamperCardProps {
   camper: Camper;
 }
-
-const engineLabels = {
-  diesel: "Diesel",
-  petrol: "Petrol",
-  hybrid: "Hybrid",
-  electric: "Electric",
-};
-
-const transmissionLabels = {
-  automatic: "Automatic",
-  manual: "Manual",
-};
-
-const formLabels = {
-  alcove: "Alcove",
-  panel_van: "Panel Van",
-  integrated: "Integrated",
-  semi_integrated: "Semi Integrated",
-};
 
 export default function CamperCard({ camper }: CamperCardProps) {
   return (

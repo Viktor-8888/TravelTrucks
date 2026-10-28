@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { createBookingRequest } from "@/lib/campers";
 import { SpinnerCircularFixed } from "spinners-react";
 import css from "./BookingForm.module.css";
@@ -10,6 +11,7 @@ interface BookingFormProps {
 }
 
 export default function BookingForm({ camperId }: BookingFormProps) {
+  const router = useRouter();
   const [errors, setErrors] = useState({
     name: "",
     email: "",
@@ -56,12 +58,12 @@ export default function BookingForm({ camperId }: BookingFormProps) {
         setServerMessage("");
 
         try {
-          const data = await createBookingRequest(camperId, {
+          await createBookingRequest(camperId, {
             name: values.name.trim(),
             email: values.email.trim(),
           });
 
-          setServerMessage(data.message);
+          router.push(`/booking-success?camperId=${camperId}`);
         } catch {
           setServerMessage("Failed to send booking request. Please try again.");
         } finally {
@@ -176,7 +178,7 @@ export default function BookingForm({ camperId }: BookingFormProps) {
       </button>
       {serverMessage && (
         <p className={css.serverMessage} role="status">
-          ✅ {serverMessage}
+          {serverMessage}
         </p>
       )}
     </form>
