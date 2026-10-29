@@ -14,7 +14,16 @@ import {
   transmissionLabels,
   formLabels,
 } from "@/lib/camper-labels";
+import type { Metadata } from "next";
 import css from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Booking Successful | TravelTrucks",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 const amenityLabels = {
   ac: "AC",
