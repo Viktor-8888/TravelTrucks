@@ -66,7 +66,7 @@ export default function BookingForm({ camperId }: BookingFormProps) {
           router.push(`/booking-success?camperId=${camperId}`);
         } catch {
           setServerMessage("Failed to send booking request. Please try again.");
-        } finally {
+
           setIsLoading(false);
         }
       }}

@@ -7,8 +7,8 @@ import {
   FaMapMarkerAlt,
   FaEnvelope,
   FaCommentDots,
-  FaInfoCircle,
 } from "react-icons/fa";
+import { HiCheck } from "react-icons/hi";
 import {
   engineLabels,
   transmissionLabels,
@@ -47,7 +47,7 @@ export default async function BookingSuccessPage({
     <main className={`container ${css.page}`}>
       <section className={css.intro}>
         <div className={css.successIcon} aria-hidden="true">
-          ✓
+          <HiCheck className="successIconSvg" />
         </div>
 
         <h1 className={css.title}>Booking request received</h1>
@@ -69,10 +69,10 @@ export default async function BookingSuccessPage({
           />
 
           <div className={css.camperInfo}>
-            <h2>{camper.name}</h2>
+            <h2 className={css.camperCardSubtitle}>{camper.name}</h2>
 
             <div className={css.camperMeta}>
-              <span>
+              <span className={css.camperMetaSpan}>
                 <FaStar className={css.ratingIcon} aria-hidden="true" />
                 {camper.rating} ({camper.totalReviews} Reviews)
               </span>
@@ -86,7 +86,9 @@ export default async function BookingSuccessPage({
               </span>
             </div>
 
-            <p>A compact panel truck for the open road.</p>
+            <p className={css.camperInfoText}>
+              A compact panel truck for the open road.
+            </p>
 
             <ul className={css.badges}>
               <li>{transmissionLabels[camper.transmission]}</li>
@@ -111,7 +113,7 @@ export default async function BookingSuccessPage({
                 <div className={css.stepContent}>
                   <h3>Keep an eye on your inbox</h3>
                   <p>
-                    Our team will email you to discuss {camper.name}&apos;s
+                    Our team will email you to discuss {camper.name}{" "}
                     availability and learn more about your plans.
                   </p>
                 </div>
@@ -125,8 +127,8 @@ export default async function BookingSuccessPage({
                 <div className={css.stepContent}>
                   <h3>Work out the details together</h3>
                   <p>
-                    We&apos;ll answer your questions and talk through the next
-                    steps before any reservation is confirmed.
+                    We`ll answer your questions and talk through the next steps
+                    before any reservation is confirmed.
                   </p>
                 </div>
               </li>
@@ -134,7 +136,7 @@ export default async function BookingSuccessPage({
           </div>
           <div className={css.notice}>
             <div className={css.noticeIcon} aria-hidden="true">
-              <FaInfoCircle className={css.noticeIconSvg} />
+              i
             </div>
 
             <p>
