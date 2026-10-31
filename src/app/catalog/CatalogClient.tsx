@@ -42,6 +42,8 @@ export default function CatalogClient() {
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
+    isPlaceholderData,
+    isSuccess,
   } = useInfiniteQuery({
     queryKey: ["campers", appliedFilters],
     queryFn: ({ pageParam }) =>
@@ -62,6 +64,8 @@ export default function CatalogClient() {
     },
   });
 
+  console.log("Pages:", data?.pages);
+
   useEffect(() => {
     if (previousFetchingRef.current && !isFetchingNextPage) {
       campersListRef.current?.scrollIntoView({
@@ -80,6 +84,10 @@ export default function CatalogClient() {
 
   const camperForms = filters?.forms ?? [];
   const engineOptions = filters?.engines ?? [];
+  const isNoCampersFound =
+    isSuccess &&
+    !isPlaceholderData &&
+    data.pages.every((page) => page.campers.length === 0);
 
   const camperFormLabels: Record<CamperForm, string> = {
     alcove: "Alcove",
