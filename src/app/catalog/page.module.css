@@ -47,7 +47,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: #101828;
+  color: var(--color-main);
 }
 
 .locationInputWrapper {
@@ -61,7 +61,7 @@
   width: 312px;
   height: 56px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 .locationInputWrapper:focus-within .locationIcon {
@@ -144,7 +144,7 @@
   margin: 0;
   border: 1px solid #475467;
   border-radius: 50%;
-  background-color: #f7f7f7;
+  background-color: var(--color-input);
   display: grid;
   place-content: center;
   cursor: pointer;
@@ -194,23 +194,23 @@
 .searchButton {
   gap: 10px;
   border: none;
-  background-color: #829b91;
+  background-color: var(--color-button);
   color: #fff;
 }
 
 .searchButton:hover {
-  background-color: #687f75;
+  background-color: var(--color-button-hover);
 }
 
 .clearFiltersButton {
   gap: 4px;
-  border: 1px solid #dadde1;
-  background-color: #fff;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
 }
 
 .clearFiltersButton:hover {
   background-color: #f7f9f8;
-  border-color: #829b91;
+  border-color: var(--color-button-hover);
 }
 
 .results {
@@ -240,7 +240,7 @@
   justify-content: center;
   flex-direction: row;
   gap: 10px;
-  border: 1px solid #dadde1;
+  border: 1px solid var(--color-border);
   border-radius: 50px;
   padding: 16px 32px;
   min-width: 145px;
@@ -251,21 +251,24 @@
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -0.01em;
-  color: #101828;
+  color: var(--color-main);
   cursor: pointer;
-  transition: border-color 250ms ease;
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease;
   white-space: nowrap;
 }
 
 .loadMoreButton:hover {
-  border-color: #6d7b75;
+  background-color: #f7f9f8;
+  border-color: var(--color-button-hover);
 }
 
 .loadMoreButton:disabled {
   cursor: not-allowed;
   opacity: 0.7;
 }
-/* Контейнер для початкового завантаження на весь екран */
+
 .initialLoadingContainer {
   display: flex;
   align-items: center;
@@ -275,6 +278,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--color-input); /* За потреби білий фон */
+  background-color: var(--color-input);
   z-index: 999;
 }
