@@ -13,6 +13,7 @@ import type {
 } from "@/types/camper";
 import { IoClose } from "react-icons/io5";
 import LoadingTracks from "@/components/LoadingTracks/LoadingTracks";
+import NoCampersFound from "@/components/NoCampersFound/NoCampersFound";
 import { SpinnerCircularFixed } from "spinners-react";
 
 export default function CatalogClient() {
@@ -42,7 +43,6 @@ export default function CatalogClient() {
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
-    isPlaceholderData,
     isSuccess,
   } = useInfiniteQuery({
     queryKey: ["campers", appliedFilters],
@@ -85,9 +85,21 @@ export default function CatalogClient() {
   const camperForms = filters?.forms ?? [];
   const engineOptions = filters?.engines ?? [];
   const isNoCampersFound =
-    isSuccess &&
-    !isPlaceholderData &&
-    data.pages.every((page) => page.campers.length === 0);
+    isSuccess && data.pages.every((page) => page.campers.length === 0);
+
+  const handleClearFilters = () => {
+    setActiveFilterAction("clear");
+    setLocation("");
+    setForm("");
+    setEngine("");
+    setTransmission("");
+    setAppliedFilters({
+      location: "",
+      form: "",
+      engine: "",
+      transmission: "",
+    });
+  };
 
   const camperFormLabels: Record<CamperForm, string> = {
     alcove: "Alcove",
@@ -236,19 +248,7 @@ export default function CatalogClient() {
             <button
               className={css.clearFiltersButton}
               type="button"
-              onClick={() => {
-                setActiveFilterAction("clear");
-                setLocation("");
-                setForm("");
-                setEngine("");
-                setTransmission("");
-                setAppliedFilters({
-                  location: "",
-                  form: "",
-                  engine: "",
-                  transmission: "",
-                });
-              }}
+              onClick={handleClearFilters}
             >
               {isFetching &&
               activeFilterAction === "clear" &&
@@ -271,23 +271,30 @@ export default function CatalogClient() {
         </aside>
         <section className={css.results}>
           <div className={css.resultsContent}>
-            <div className={css.campersList}>
-              {data?.pages.map((page, pageIndex) => (
-                <div
-                  key={page.page}
-                  className={css.campersPage}
-                  ref={
-                    pageIndex === data.pages.length - 1 && pageIndex > 0
-                      ? campersListRef
-                      : null
-                  }
-                >
-                  {page.campers.map((camper) => (
-                    <CamperCard key={camper.id} camper={camper} />
-                  ))}
-                </div>
-              ))}
-            </div>
+            {isNoCampersFound ? (
+              <NoCampersFound
+                onClearFilters={handleClearFilters}
+                onViewAllCampers={handleClearFilters}
+              />
+            ) : (
+              <div className={css.campersList}>
+                {data?.pages.map((page, pageIndex) => (
+                  <div
+                    key={page.page}
+                    className={css.campersPage}
+                    ref={
+                      pageIndex === data.pages.length - 1 && pageIndex > 0
+                        ? campersListRef
+                        : null
+                    }
+                  >
+                    {page.campers.map((camper) => (
+                      <CamperCard key={camper.id} camper={camper} />
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {hasNextPage && (

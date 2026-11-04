@@ -1,0 +1,83 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 16px;
+  padding: 0 24px 161px;
+  max-width: 888px;
+  background-color: var(--color-background-secondary);
+}
+
+.image {
+  width: 100%;
+  max-width: 488px;
+  height: auto;
+  margin-bottom: 21px;
+}
+
+.title {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  text-align: center;
+  color: var(--color-main);
+}
+
+.text {
+  margin-bottom: 43px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--color-main);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.clearFiltersButton,
+.viewAllButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  width: 192px;
+  height: 56px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: nowrap;
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease;
+}
+
+.clearFiltersButton {
+  gap: 4px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  color: var(--color-main);
+}
+
+.clearFiltersButton:hover {
+  background-color: #f7f9f8;
+  border-color: var(--color-button-hover);
+}
+
+.viewAllButton {
+  border: none;
+  background-color: var(--color-button);
+  color: var(--color-white);
+}
+
+.viewAllButton:hover {
+  background-color: var(--color-button-hover);
+}

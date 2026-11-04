@@ -186,7 +186,6 @@
   height: 56px;
   max-width: 312px;
   border-radius: 50px;
-  cursor: pointer;
   transition:
     background-color 250ms ease,
     border-color 250ms ease;
@@ -195,22 +194,22 @@
 .searchButton {
   gap: 10px;
   border: none;
-  background: #829b91;
+  background-color: #829b91;
   color: #fff;
 }
 
 .searchButton:hover {
-  background: #687f75;
+  background-color: #687f75;
 }
 
 .clearFiltersButton {
   gap: 4px;
   border: 1px solid #dadde1;
-  background: #fff;
+  background-color: #fff;
 }
 
 .clearFiltersButton:hover {
-  background: #f7f9f8;
+  background-color: #f7f9f8;
   border-color: #829b91;
 }
 
