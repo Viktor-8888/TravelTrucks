@@ -54,6 +54,7 @@ export default function CatalogClient() {
         engine: appliedFilters.engine || undefined,
       }),
     placeholderData: (previousData) => previousData,
+    gcTime: 0,
     initialPageParam: 1,
     getNextPageParam: (lastPage) => {
       if (lastPage.page < lastPage.totalPages) {
