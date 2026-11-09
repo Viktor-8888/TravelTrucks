@@ -4,6 +4,8 @@
 
 # TravelTrucks
 
+<img src="public/travel.webp" alt="TravelTrucks hero banner" width="100%" />
+
 **A camper rental web app: browse the catalog, filter by what you need and send a booking request in a few clicks.**
 
 ![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)
