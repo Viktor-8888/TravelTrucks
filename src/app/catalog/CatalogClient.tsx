@@ -32,7 +32,7 @@ export default function CatalogClient() {
     transmission: "" as CamperTransmission | "",
   });
 
-  const campersListRef = useRef<HTMLDivElement | null>(null);
+  const campersListRef = useRef<HTMLUListElement | null>(null);
   const previousFetchingRef = useRef(false);
 
   const {
@@ -280,7 +280,7 @@ export default function CatalogClient() {
             ) : (
               <div className={css.campersList}>
                 {data?.pages.map((page, pageIndex) => (
-                  <div
+                  <ul
                     key={page.page}
                     className={css.campersPage}
                     ref={
@@ -292,7 +292,7 @@ export default function CatalogClient() {
                     {page.campers.map((camper) => (
                       <CamperCard key={camper.id} camper={camper} />
                     ))}
-                  </div>
+                  </ul>
                 ))}
               </div>
             )}

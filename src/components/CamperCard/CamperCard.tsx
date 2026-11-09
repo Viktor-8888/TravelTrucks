@@ -21,7 +21,7 @@ interface CamperCardProps {
 
 export default function CamperCard({ camper }: CamperCardProps) {
   return (
-    <article className={css.card}>
+    <li className={css.card}>
       <div className={css.imageWrapper}>
         <Image
           className={css.image}
@@ -79,6 +79,6 @@ export default function CamperCard({ camper }: CamperCardProps) {
           Show more
         </Link>
       </div>
-    </article>
+    </li>
   );
 }
