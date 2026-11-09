@@ -24,11 +24,11 @@
 
 TravelTrucks is a front-end application for a camper rental company. Users can explore the full fleet of campervans, narrow it down by location, body type, engine and transmission, look at detailed specs, photos and reviews of each vehicle, and submit a booking request.
 
-It is built with the **Next.js App Router**. Pages that need SEO (camper details, booking confirmation) render on the server, and interactive parts (catalog filters, reviews, booking form) run on the client with **TanStack Query** handling data fetching and caching.
+It is built with the **Next.js App Router**. Pages that need SEO (home, catalog, camper details, booking confirmation) render on the server, and interactive parts (catalog filters, reviews, booking form) run on the client with **TanStack Query** handling data fetching and caching.
 
 ## Features
 
-- **[Home page.](https://travel-trucks-eight-tawny.vercel.app/)** Hero section with a call to action that leads to the catalog.
+- **[Home page.](https://travel-trucks-eight-tawny.vercel.app/)** Hero section with a call to action that leads to the catalog, with its own SEO and social sharing metadata.
 - **[Catalog with filters.](https://travel-trucks-eight-tawny.vercel.app/catalog)**
   - Search by location
   - Filter by camper form (Alcove, Panel Van, Integrated, Semi Integrated), engine (Diesel, Petrol, Hybrid, Electric) and transmission (Automatic, Manual)
@@ -49,6 +49,21 @@ It is built with the **Next.js App Router**. Pages that need SEO (camper details
   - Redirects to a confirmation page on success
 - **[Booking confirmation page.](https://travel-trucks-eight-tawny.vercel.app/booking-success?camperId=cmqv06hzn004hyyxtjyv3y6nl)** A summary of the selected camper and what happens next. It is marked `noindex`.
 - **Polished UX.** Loading spinners, error states, responsive layout and accessible markup (labels, fieldsets, visually hidden headings).
+
+## SEO & Metadata
+
+Every route defines metadata through the Next.js [Metadata API](https://nextjs.org/docs/app/building-your-application/optimizing/metadata):
+
+| Route                   | Title                                    | Type    | Highlights                                                      |
+| ----------------------- | ---------------------------------------- | ------- | --------------------------------------------------------------- |
+| `/`                     | `TravelTrucks \| Campers of your dreams` | Static  | Description, canonical URL, Open Graph, Twitter card            |
+| `/catalog`              | `Catalog \| TravelTrucks`                | Static  | Description, Open Graph, Twitter card                           |
+| `/catalog/[camperId]`   | `<Camper name> \| TravelTrucks`          | Dynamic | `generateMetadata` uses the camper's description and first gallery photo for social previews |
+| `/booking-success`      | `Booking Successful \| TravelTrucks`     | Static  | `noindex, nofollow` so confirmation pages stay out of search results |
+
+- `metadataBase` is set in `src/app/layout.tsx` to the production URL, so relative Open Graph image paths become absolute links.
+- The default social preview image is `public/travel-trucks.jpg` (1200×630).
+- The camper details page caches its API call with React `cache()`, so `generateMetadata` and the page share one request.
 
 ## Tech Stack
 
@@ -116,7 +131,7 @@ NEXT_PUBLIC_API_URL=https://your-api-base-url
 src/
 ├── app/
 │   ├── layout.tsx               # Root layout: font, header, providers
-│   ├── page.tsx                 # Home page (hero)
+│   ├── page.tsx                 # Home page (hero + metadata)
 │   ├── catalog/
 │   │   ├── page.tsx             # Catalog route + metadata
 │   │   ├── CatalogClient.tsx    # Filters, infinite list, Load More
