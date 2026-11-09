@@ -2,6 +2,7 @@
 
 <img src="src/app/favicon.ico" alt="TravelTrucks icon" height="40" />
 <img src="public/logo.svg" alt="TravelTrucks logo" height="40" />
+<img src="src/app/favicon.ico" alt="TravelTrucks icon" height="40" />
 
 # TravelTrucks
 
@@ -51,15 +52,15 @@ It is built with the **Next.js App Router**. Pages that need SEO (camper details
 
 ## Tech Stack
 
-| Category       | Tools                                                                                  |
-| -------------- | -------------------------------------------------------------------------------------- |
-| Framework      | [Next.js 16](https://nextjs.org/) (App Router, Server Components)                      |
-| UI             | [React 19](https://react.dev/), CSS Modules, [modern-normalize](https://github.com/sindresorhus/modern-normalize) |
-| Language       | [TypeScript](https://www.typescriptlang.org/)                                          |
-| Data fetching  | [TanStack Query v5](https://tanstack.com/query), [Axios](https://axios-http.com/)     |
-| UI libraries   | [Swiper](https://swiperjs.com/), [React Icons](https://react-icons.github.io/react-icons/), [spinners-react](https://github.com/adexin/spinners-react) |
-| Fonts          | Inter via `next/font`                                                                  |
-| Code quality   | ESLint, Prettier                                                                       |
+| Category      | Tools                                                                                                                                                  |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Framework     | [Next.js 16](https://nextjs.org/) (App Router, Server Components)                                                                                      |
+| UI            | [React 19](https://react.dev/), CSS Modules, [modern-normalize](https://github.com/sindresorhus/modern-normalize)                                      |
+| Language      | [TypeScript](https://www.typescriptlang.org/)                                                                                                          |
+| Data fetching | [TanStack Query v5](https://tanstack.com/query), [Axios](https://axios-http.com/)                                                                      |
+| UI libraries  | [Swiper](https://swiperjs.com/), [React Icons](https://react-icons.github.io/react-icons/), [spinners-react](https://github.com/adexin/spinners-react) |
+| Fonts         | Inter via `next/font`                                                                                                                                  |
+| Code quality  | ESLint, Prettier                                                                                                                                       |
 
 ## Getting Started
 
@@ -144,13 +145,13 @@ src/
 
 The app talks to a REST API at `NEXT_PUBLIC_API_URL`:
 
-| Method | Endpoint                               | Description                                                                   |
-| ------ | -------------------------------------- | ----------------------------------------------------------------------------- |
-| `GET`  | `/campers`                             | Paginated list (`page`, `perPage`, `location`, `form`, `engine`, `transmission`) |
-| `GET`  | `/campers/filters`                     | Available filter options                                                      |
-| `GET`  | `/campers/:id`                         | Camper details, including the gallery                                         |
-| `GET`  | `/campers/:id/reviews`                 | Reviews for a camper                                                          |
-| `POST` | `/campers/:id/booking-requests`        | Send a booking request (`{ name, email }`)                                    |
+| Method | Endpoint                        | Description                                                                      |
+| ------ | ------------------------------- | -------------------------------------------------------------------------------- |
+| `GET`  | `/campers`                      | Paginated list (`page`, `perPage`, `location`, `form`, `engine`, `transmission`) |
+| `GET`  | `/campers/filters`              | Available filter options                                                         |
+| `GET`  | `/campers/:id`                  | Camper details, including the gallery                                            |
+| `GET`  | `/campers/:id/reviews`          | Reviews for a camper                                                             |
+| `POST` | `/campers/:id/booking-requests` | Send a booking request (`{ name, email }`)                                       |
 
 ## Deployment
 
