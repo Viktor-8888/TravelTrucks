@@ -2,7 +2,7 @@
 
 <img src="src/app/favicon.ico" alt="TravelTrucks icon" height="40" />
 
-# [TravelTrucks] (https://travel-trucks-eight-tawny.vercel.app/)
+# [TravelTrucks](https://travel-trucks-eight-tawny.vercel.app/)
 
 **[https://travel-trucks-eight-tawny.vercel.app/](https://travel-trucks-eight-tawny.vercel.app/)**
 
@@ -28,22 +28,22 @@ It is built with the **Next.js App Router**. Pages that need SEO (camper details
 
 ## Features
 
-- **[Home page](https://travel-trucks-eight-tawny.vercel.app/).** Hero section with a call to action that leads to the catalog.
-- **[Catalog with filters](https://travel-trucks-eight-tawny.vercel.app/catalog)**
+- **[Home page.](https://travel-trucks-eight-tawny.vercel.app/)** Hero section with a call to action that leads to the catalog.
+- **[Catalog with filters.](https://travel-trucks-eight-tawny.vercel.app/catalog)**
   - Search by location
   - Filter by camper form (Alcove, Panel Van, Integrated, Semi Integrated), engine (Diesel, Petrol, Hybrid, Electric) and transmission (Automatic, Manual)
   - Filter options are loaded from the API, so they always match the available data
   - "Clear filters" resets everything in one click
   - Paginated loading with a **Load More** button (infinite query), with smooth scrolling to the newly loaded results
   - A friendly "No campers found" state when nothing matches
-- **[Camper details page](https://travel-trucks-eight-tawny.vercel.app/catalog/cmqv06hzn004hyyxtjyv3y6nl)**
+- **[Camper details page.](https://travel-trucks-eight-tawny.vercel.app/catalog/cmqv06hzn004hyyxtjyv3y6nl)**
   - Photo gallery built with Swiper
   - Rating, location, price and description
   - Vehicle specs: form, length, width, height, tank and fuel consumption
   - Amenity badges (AC, kitchen, bathroom, TV and more)
   - User reviews with star ratings
   - Dynamic SEO metadata, plus Open Graph and Twitter cards for each camper
-- **[Booking form](https://travel-trucks-eight-tawny.vercel.app/catalog/cmqv06hzn004hyyxtjyv3y6nl)**
+- **[Booking form.](https://travel-trucks-eight-tawny.vercel.app/catalog/cmqv06hzn004hyyxtjyv3y6nl)**
   - Client-side validation of name and email with inline error messages
   - Loading state while the request is being sent
   - Redirects to a confirmation page on success
