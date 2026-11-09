@@ -1,5 +1,6 @@
 <div align="center">
 
+<img src="src/app/favicon.ico" alt="TravelTrucks icon" height="40" />
 <img src="public/logo.svg" alt="TravelTrucks logo" height="40" />
 
 # TravelTrucks
