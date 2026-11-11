@@ -349,6 +349,11 @@
     flex-direction: column;
   }
 
+  .searchButton,
+  .clearFiltersButton {
+    flex: none;
+  }
+
   .campersList,
   .campersPage {
     gap: 24px;
