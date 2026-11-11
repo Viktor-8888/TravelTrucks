@@ -34,6 +34,24 @@ export default function CatalogClient() {
 
   const campersListRef = useRef<HTMLUListElement | null>(null);
   const previousFetchingRef = useRef(false);
+  const resultsRef = useRef<HTMLElement | null>(null);
+  const shouldScrollToResultsRef = useRef(false);
+
+  // On tablet and mobile the filters sit above the results, so after a search
+  // bring the results into view unless they are already near the top.
+  const scrollToResultsIfNeeded = () => {
+    const results = resultsRef.current;
+
+    if (!results || !window.matchMedia("(max-width: 1279.98px)").matches) {
+      return;
+    }
+
+    const { top } = results.getBoundingClientRect();
+
+    if (top < 0 || top > window.innerHeight * 0.3) {
+      results.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   const {
     data,
@@ -77,6 +95,13 @@ export default function CatalogClient() {
 
     previousFetchingRef.current = isFetchingNextPage;
   }, [isFetchingNextPage]);
+
+  useEffect(() => {
+    if (shouldScrollToResultsRef.current && !isFetching) {
+      shouldScrollToResultsRef.current = false;
+      scrollToResultsIfNeeded();
+    }
+  }, [isFetching]);
 
   const { data: filters } = useQuery({
     queryKey: ["camperFilters"],
@@ -222,13 +247,21 @@ export default function CatalogClient() {
               className={css.searchButton}
               type="button"
               onClick={() => {
+                const nextFilters = { location, form, engine, transmission };
+                const isSameSearch = (
+                  Object.keys(nextFilters) as (keyof typeof nextFilters)[]
+                ).every((key) => nextFilters[key] === appliedFilters[key]);
+
                 setActiveFilterAction("search");
-                setAppliedFilters({
-                  location,
-                  form,
-                  engine,
-                  transmission,
-                });
+
+                if (isSameSearch) {
+                  // Nothing new to fetch, so the results are already final.
+                  scrollToResultsIfNeeded();
+                  return;
+                }
+
+                shouldScrollToResultsRef.current = true;
+                setAppliedFilters(nextFilters);
               }}
             >
               {isFetching &&
@@ -270,7 +303,7 @@ export default function CatalogClient() {
             </button>
           </div>
         </aside>
-        <section className={css.results}>
+        <section className={css.results} ref={resultsRef}>
           <div className={css.resultsContent}>
             {isNoCampersFound ? (
               <NoCampersFound

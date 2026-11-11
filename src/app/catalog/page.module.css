@@ -217,6 +217,7 @@
 .results {
   flex: 1 1 888px;
   min-width: 0;
+  scroll-margin-top: 16px;
 }
 
 .resultsContent {
