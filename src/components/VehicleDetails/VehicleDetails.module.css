@@ -78,3 +78,23 @@
   text-align: right;
   text-transform: capitalize;
 }
+
+@media (max-width: 1279.98px) {
+  .details {
+    max-width: none;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .details {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .feature {
+    padding: 10px 14px;
+    height: 44px;
+  }
+}

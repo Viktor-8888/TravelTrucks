@@ -81,3 +81,30 @@
 .viewAllButton:hover {
   background-color: var(--color-button-hover);
 }
+
+@media (max-width: 1279.98px) {
+  .wrapper {
+    max-width: none;
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .wrapper {
+    padding: 0 20px 40px;
+  }
+
+  .text {
+    margin-bottom: 32px;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .clearFiltersButton,
+  .viewAllButton {
+    width: 100%;
+  }
+}

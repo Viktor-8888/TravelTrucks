@@ -29,6 +29,7 @@ export default function CamperCard({ camper }: CamperCardProps) {
           alt={camper.name}
           width={219}
           height={240}
+          sizes="(max-width: 767px) 100vw, 219px"
           loading="eager"
         />
       </div>

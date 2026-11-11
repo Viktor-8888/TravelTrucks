@@ -6,6 +6,10 @@
   margin: 0 auto;
   color: #f7f7f7;
   background-image: url("/travel.webp");
+  background-image: image-set(
+    url("/travel.webp") 1x,
+    url("/travel@2x.webp") 2x
+  );
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -63,4 +67,44 @@
 
 .heroButton:hover {
   background-color: var(--color-button-hover);
+}
+
+@media (max-width: 1279.98px) {
+  .hero {
+    height: 640px;
+    max-height: calc(100svh - 73px);
+    min-height: 480px;
+    background-position: 35% center;
+  }
+
+  .heroContainer {
+    padding-top: 160px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    height: 520px;
+    max-height: none;
+    min-height: 0;
+    background-position: 40% center;
+  }
+
+  .heroContainer {
+    padding-top: 96px;
+  }
+
+  .heroContent {
+    min-width: 0;
+  }
+
+  .heroContent h1 {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .heroContent p {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
 }

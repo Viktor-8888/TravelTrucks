@@ -45,3 +45,32 @@
 .navigation a.active {
   color: var(--color-button);
 }
+
+@media (max-width: 1279.98px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .logo {
+    left: 32px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .header {
+    min-height: 64px;
+  }
+
+  .container {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .logo {
+    position: static;
+  }
+
+  .navigation {
+    gap: 16px;
+  }
+}

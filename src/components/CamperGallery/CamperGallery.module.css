@@ -45,9 +45,9 @@
 
 .thumbnail {
   position: relative;
-  flex: 0 0 136px;
-  width: 136px;
-  height: 144px;
+  flex: 0 1 136px;
+  min-width: 0;
+  aspect-ratio: 136 / 144;
   padding: 0;
   overflow: hidden;
   border: 3px solid transparent;
@@ -104,4 +104,50 @@
 .modal :global(.swiper-button-prev),
 .modal :global(.swiper-button-next) {
   color: var(--color-white);
+}
+
+@media (max-width: 1279.98px) {
+  .gallery,
+  .mainImage {
+    max-width: none;
+  }
+
+  .thumbnails {
+    gap: 24px;
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mainImage {
+    border-radius: 16px;
+  }
+
+  .thumbnails {
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .thumbnail {
+    flex: 1 1 0;
+    border-radius: 12px;
+  }
+
+  .modal {
+    padding: 56px 12px 24px;
+  }
+
+  .closeButton {
+    top: 8px;
+    right: 16px;
+  }
+
+  .modalImage {
+    height: 60vh;
+  }
+
+  .modal :global(.swiper-button-prev),
+  .modal :global(.swiper-button-next) {
+    display: none;
+  }
 }

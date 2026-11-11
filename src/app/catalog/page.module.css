@@ -58,7 +58,8 @@
   gap: 8px;
   border-radius: 12px;
   padding: 18px 20px;
-  width: 312px;
+  width: 100%;
+  max-width: 312px;
   height: 56px;
   box-sizing: border-box;
   background-color: var(--color-white);
@@ -280,4 +281,75 @@
   left: 0;
   background-color: var(--color-input);
   z-index: 999;
+}
+
+@media (max-width: 1279.98px) {
+  .catalogLayout {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .filters {
+    max-width: none;
+    min-height: 0;
+  }
+
+  .locationField {
+    margin-bottom: 32px;
+  }
+
+  .locationInputWrapper {
+    max-width: none;
+  }
+
+  .filterGroup {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .filterTitle {
+    grid-column: 1 / -1;
+  }
+
+  .filterActions {
+    flex-direction: row;
+  }
+
+  .searchButton,
+  .clearFiltersButton {
+    flex: 1;
+    max-width: none;
+  }
+
+  .results {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .catalogLayout {
+    gap: 32px;
+  }
+
+  .filters {
+    padding: 20px;
+  }
+
+  .filterGroup {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 16px;
+  }
+
+  .filterActions {
+    flex-direction: column;
+  }
+
+  .campersList,
+  .campersPage {
+    gap: 24px;
+  }
 }

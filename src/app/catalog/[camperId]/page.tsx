@@ -61,12 +61,12 @@ export default async function CamperPage({ params }: CamperPageProps) {
         </div>
 
         <div className={css.bottomSection}>
-          <section>
+          <section className={css.reviewsSection}>
             <h2 className={css.sectionTitle}>Reviews</h2>
             <Reviews camperId={camperId} />
           </section>
 
-          <section>
+          <section className={css.bookingSection}>
             <h2 className={css.sectionTitle}>Book your campervan now</h2>
 
             <BookingForm camperId={camperId} />

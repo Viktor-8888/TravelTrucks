@@ -130,3 +130,62 @@
 .button:hover {
   background-color: var(--color-button-hover);
 }
+
+@media (max-width: 1279.98px) {
+  .card {
+    max-width: none;
+  }
+
+  .content {
+    max-width: none;
+  }
+
+  .wrapper {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+
+  .meta {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card {
+    flex-direction: column;
+    gap: 16px;
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  .content {
+    min-height: 0;
+  }
+
+  .title,
+  .price {
+    font-size: 20px;
+  }
+
+  .meta,
+  .description,
+  .features {
+    margin-bottom: 20px;
+  }
+
+  .feature {
+    padding: 10px 14px;
+    height: 44px;
+  }
+
+  .button {
+    align-self: stretch;
+  }
+}
