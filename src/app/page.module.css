@@ -71,10 +71,15 @@
 
 @media (max-width: 1279.98px) {
   .hero {
-    height: 640px;
-    max-height: calc(100svh - 73px);
+    height: calc(100vh - 73px);
+    height: calc(100svh - 73px);
     min-height: 480px;
-    background-position: 35% center;
+    background-image: url("/travel-tablet.webp");
+    background-image: image-set(
+      url("/travel-tablet.webp") 1x,
+      url("/travel-tablet@2x.webp") 2x
+    );
+    background-position: center;
   }
 
   .heroContainer {
@@ -84,10 +89,14 @@
 
 @media (max-width: 767.98px) {
   .hero {
-    height: 520px;
-    max-height: none;
-    min-height: 0;
-    background-position: 40% center;
+    height: calc(100vh - 65px);
+    height: calc(100svh - 65px);
+    min-height: 420px;
+    background-image: url("/travel-mobile.webp");
+    background-image: image-set(
+      url("/travel-mobile.webp") 1x,
+      url("/travel-mobile@2x.webp") 2x
+    );
   }
 
   .heroContainer {
