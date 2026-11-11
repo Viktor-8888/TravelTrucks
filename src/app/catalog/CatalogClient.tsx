@@ -37,8 +37,6 @@ export default function CatalogClient() {
   const resultsRef = useRef<HTMLElement | null>(null);
   const shouldScrollToResultsRef = useRef(false);
 
-  // On tablet and mobile the filters sit above the results, so after a search
-  // bring the results into view unless they are already near the top.
   const scrollToResultsIfNeeded = () => {
     const results = resultsRef.current;
 
@@ -255,7 +253,6 @@ export default function CatalogClient() {
                 setActiveFilterAction("search");
 
                 if (isSameSearch) {
-                  // Nothing new to fetch, so the results are already final.
                   scrollToResultsIfNeeded();
                   return;
                 }
